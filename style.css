@@ -1,0 +1,370 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        background: black;
+    }
+    
+    @media (max-width: 900px) {
+        .navbar {
+            display: none !important;
+        }
+    }
+    
+    .site-info img {
+        width: 29vh;
+        height: 15vh;
+        padding-top: 10px;
+        transition: all o.5s ease;
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .navbar {
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        padding: 2px;
+        display: flex;
+        z-index: 1000;
+    }
+    
+    .menu-item:nth-child(1) {
+        margin-left: 70%;
+    }
+    
+    .site-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        width: 50%;
+        height: 100px;
+    }
+    
+    .menu-item {
+        margin-left: 110px;
+    }
+    
+    .lang.active {
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 10px;
+    }
+    
+    .menu-item a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        position: relative;
+        display: inline-block;
+        padding: 0px 15px 0 15px;
+    }
+    
+    .menu-item a::before {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 80%;
+        left: 10px;
+        bottom: 0;
+        background: white;
+        transition: 0.3s;
+    }
+    
+    .menu-item a:hover:before {
+        width: 0;
+    }
+    
+    .menu-item a::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        box-sizing: border-box;
+        transition: 0.3s;
+        padding: 10px;
+    }
+    
+    .menu-item a:hover:after {
+        width: 100%;
+        height: 100%;
+        border: 1px solid white;
+        padding: 10px;
+    }
+    
+    .imag {
+        width: 29vh;
+        height: 15vh;
+    }
+    
+    .header {
+        position: absolute;
+        width: 100%;
+        top: 20%;
+        text-transform: uppercase;
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+        cursor: default;
+        color: white;
+    }
+    
+    .a {
+        font-size: 3.5rem;
+        font-family: 'IBM Plex Serif', serif;
+    }
+    
+    .b {
+        font-size: 3.5rem;
+        font-family: 'Style Script', cursive;
+    }
+    
+    .c {
+        font-size: 3.5rem;
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+    
+    .page2 {
+        min-height: 130vh;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .scrt {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5vw;
+    }
+    
+    #l1 {
+        white-space: nowrap;
+        margin-top: 60px;
+    }
+    
+    #l2 {
+        white-space: nowrap;
+    }
+    
+    .tex {
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+    
+    .para {
+        width: 35%;
+        margin: 40px;
+        margin-left: 80px;
+        font-family: 'IBM Plex Serif', serif;
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+    
+    .button {
+        text-transform: uppercase;
+        margin-left: 22%;
+        font-family: 'Baloo Bhai 2', cursive;
+        font-weight: bolder;
+        margin-bottom: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 11%;
+        padding: 2px;
+        text-align: center;
+        transition: all ease-out 0.3s;
+        box-shadow: inset 0 0 0 0 black;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        box-shadow: inset 135px 0 0 0 black;
+        color: white;
+    }
+    
+    .inv {
+        color: black;
+    }
+    
+    .imginv {
+        filter: invert(100);
+    }
+    
+    .page3 {
+        max-height: 130vh;
+        width: 100%;
+        overflow: hidden;
+        background: black;
+        overflow-x: hidden;
+    }
+    
+    .info {
+        width: 35%;
+        margin-top: 30vh;
+        margin-left: 100px;
+        font-family: 'IBM Plex Serif', serif;
+        font-size: 1.7rem;
+        font-weight: 900;
+        color: white;
+        text-transform: uppercase;
+    }
+    
+    .in {
+        font-weight: bolder;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold Italic', sans-serif;
+        position: absolute;
+        z-index: 10;
+    }
+    
+    .carousel {
+        overflow: hidden;
+        max-width: 100%;
+        position: relative;
+        max-height: 400px;
+    }
+    
+    .carousel .carousel__item,
+    .carousel .carousel__item--hidden {
+        display: none;
+    }
+    
+    .carousel .carousel__item img {
+        max-width: 100%;
+        max-height: 25%;
+    }
+    
+    .carousel .carousel__item--visible {
+        display: block;
+        animation: fadeVisibility 0.5s;
+    }
+    
+    .carousel .carousel__actions {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .carousel .carousel__actions button {
+        border-radius: 50px;
+        border: 0;
+        font-weight: bold;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel .carousel__actions button#carousel__button--prev {
+        margin-left: 20px;
+    }
+    
+    .carousel .carousel__actions button#carousel__button--next {
+        margin-right: 20px;
+    }
+    
+    @keyframes fadeVisibility {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            transform: opacity linear;
+        }
+    }
+    
+    .butt {
+        text-transform: uppercase;
+        font-family: 'Baloo Bhai 2', cursive;
+        color: white;
+        font-weight: bolder;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 11%;
+        padding: 2px;
+        text-align: center;
+        transition: all ease-out 0.3s;
+        box-shadow: inset 0 0 0 0 black;
+        cursor: pointer;
+        margin: 40px auto;
+    }
+    
+    .butt:hover {
+        box-shadow: inset 135px 0 0 0 white;
+        color: black;
+    }
+    
+    .page4 {
+        min-height: 100vh;
+        width: 100%;
+        background: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+    }
+    
+    .wor {
+        font-family: cursive;
+        font-size: 1.3rem;
+        width: 35%;
+        text-align: center;
+    }
+    
+    .page5 {
+        background: black;
+        min-height: 100vh;
+        width: 100%;
+        background: black;
+        color: white;
+        text-transform: uppercase;
+    }
+    
+    .lr {
+        width: 40vw;
+        height: 50vh;
+        padding: 150px 200px;
+        font-family: sans-serif;
+    }
+    
+    .yes {
+        display: flex;
+        justify-content: space-around;
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+    
+    .cha {
+        text-transform: uppercase;
+        font-family: 'Baloo Bhai 2', cursive;
+        color: white;
+        font-weight: bolder;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 2px;
+        text-align: center;
+        transition: all ease-out 0.3s;
+        box-shadow: inset 0 0 0 0 black;
+        cursor: pointer;
+    }
+    
+    .cha:hover {
+        box-shadow: inset 200px 0 0 0 white;
+        color: black;
+    }
